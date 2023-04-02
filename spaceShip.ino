@@ -5,9 +5,7 @@
 using namespace std;
 
 int button1 = 16;
-int button3 = 12;
 int button4 = 14;
-int button5 = 13;
 int button6 = 15;
 
 Adafruit_SSD1306 display(128, 64, &Wire, -1);
@@ -207,7 +205,7 @@ void loop() {
           if (timeUndead % 10 < 5) display.drawBitmap(Xship, Yship, iconSpaceShip, 7, 8, 1);
           timeUndead--;
         } else display.drawBitmap(Xship, Yship, iconSpaceShip, 7, 8, 1);
-        if (scores == 5 && creBoss == 0) creBoss = 1;
+        if (scores == 20 && creBoss == 0) creBoss = 1;
         if (creBoss == 0) creNewEnemy(0);
         else {
           if (vecEnemy.size() == 0 && creBoss == 1) {
